@@ -1,0 +1,4 @@
+The following additional packages needed for the panoptic deeplab code
+
+pip install tabulate fvcore
+pip install pyquaternion
