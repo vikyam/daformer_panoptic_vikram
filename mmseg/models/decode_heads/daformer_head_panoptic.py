@@ -9,6 +9,7 @@ from .aspp_head import ASPPModule
 from .decode_head_panoptic import BaseDecodeHeadPanoptic
 from .segformer_head import MLP
 from .sep_aspp_head import DepthwiseSeparableASPPModule
+from .mask2former_head import Mask2FormerHead
 
 
 '''
@@ -172,6 +173,8 @@ class DAFormerHeadPanoptic(BaseDecodeHeadPanoptic):
         if self.act_panop:
             # instance head
             self.embed_layers_instance, self.fuse_layer_instance = get_layers(self.in_index, self.in_channels, embed_dims, self.channels, embed_neck_cfg, embed_cfg, fusion_cfg)
+            # Mask2Former instance head
+            self.instance_mask_head = Mask2FormerHead()
 
         self.debug = kwargs['debug']
         self.debug_output = {}
