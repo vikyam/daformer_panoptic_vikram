@@ -11,7 +11,7 @@ from .semantic_post_processing import get_semantic_segmentation
 __all__ = ['find_instance_center', 'get_instance_segmentation', 'get_panoptic_segmentation']
 
 
-def find_instance_center(ctr_hmp, threshold=0.1, nms_kernel=3, top_k=None):
+def find_instance_center(ctr_hmp, threshold=0.5, nms_kernel=7, top_k=None):
     """
     Find the center points from the center heatmap.
     Arguments:
@@ -94,7 +94,7 @@ def group_pixels(ctr, offsets):
     return instance_id
 
 
-def get_instance_segmentation(sem_seg, ctr_hmp, offsets, thing_list, threshold=0.1, nms_kernel=3, top_k=None,
+def get_instance_segmentation(sem_seg, ctr_hmp, offsets, thing_list, threshold=0.5, nms_kernel=7, top_k=None,
                               thing_seg=None):
     """
     Post-processing for instance segmentation, gets class agnostic instance id map.

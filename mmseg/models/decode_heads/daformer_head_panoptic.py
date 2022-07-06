@@ -174,7 +174,7 @@ class DAFormerHeadPanoptic(BaseDecodeHeadPanoptic):
             # instance head
             self.embed_layers_instance, self.fuse_layer_instance = get_layers(self.in_index, self.in_channels, embed_dims, self.channels, embed_neck_cfg, embed_cfg, fusion_cfg)
             # Mask2Former instance head
-            self.instance_mask_head = Mask2FormerHead()
+            # self.instance_mask_head = Mask2FormerHead()
 
         self.debug = kwargs['debug']
         self.debug_output = {}

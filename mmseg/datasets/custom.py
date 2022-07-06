@@ -471,7 +471,7 @@ class CustomDataset(Dataset):
         label_divisor = 1000
 
         cityscapes_thing_list = [11, 12, 13, 14, 15, 16, 17, 18]
-        CENTER_THRESHOLD = 0.1
+        CENTER_THRESHOLD = 0.5
         NMS_KERNEL = 7
         TOP_K_INSTANCE = 200
         from tools.panoptic_deeplab.utils import AverageMeter
